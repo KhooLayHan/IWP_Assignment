@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add New Product</title>
+<style>
+	body {
+		background-color: wheat;
+        background-image: url("../Resource/Images/Background/whole-deer.jpg");	
+		background-position: center;		
+	}
+    #display_img {
+        width: 375px;
+        height: 211px;
+        border: 1px solid black;
+        background-position: center;
+        background-size: cover;
+    }
+    li a {
+		top:10%;
+		display: block;
+		color: #000;
+		padding: 8px 16px;
+		text-decoration: none;
+	}
+	li a:hover {
+		background-color: #555;
+		color: white;
+	}	
+	.container{
+		color: lightskyblue;
+		width: 20%;
+		padding:10px;
+		font-size: 15px;
+		margin: 10px 0;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		background-color: lightskyblue;
+		height:600px;
+		align-content: left;
+	}
+	.dropdown img{
+		position: absolute; top: 20px; left: 340px;
+		height: 50px;
+		width: 50px;
+	}
+	.user{
+	    position: absolute; left: 400px; top: 35px;
+	}
+	.name{
+        position: absolute; top: -20px;
+        color:white;
+	}
+	.container2{
+        position: absolute;
+        background-color: whitesmoke;
+        padding:10px;
+        margin: 10px 0;
+        border: none;
+        outline: none;
+        height: 600px;
+        width:1170px;
+        top: 112px;
+        left: 329px;
+    }
+    .view{
+        text-decoration: none;
+        color:aqua;
+    }
+</style>
+</head>
+<body>
+    <div class="navi" id="navigation">
+		<div class="logo">
+				<img src="../Resource/Images/DeerLogos/deer-street.png" alt="" class="logo">
+					
+	</div>
+	</div>
+	<div class="container">
+		<div class="navi">
+			<li><a href="../YZY/home page.html"><span class="txt1">Home</span></a></li>
+			<li><a href="../YZY/ART_Gallery.html"><span class="txt1">To Art Gallery</span></a></li>
+			<li><a href="seller_manage_product_page.html"><span class="txt1">Manage Product</span></a></li>
+			<li><a href="seller_add_product_page.html"><span class="txt1">Add Product</span></a></li>
+			<li><a href="admin manage staff(2).html"><span class="txt1">Manage Staff</span></a></li>				
+			<li><a href="seller_member_page.html"><span class="txt1">Manage Member</span></a></li>
+			<li><a href="seller_order_unpaid_page.html"><span class="txt1">Manage Order</span></a></li>
+		</div>
+	</div>
+				<div>
+						<div class="dropdown"><img src="../Resource/Images/DeerLogos/default-placeholder.jpg" alt="user">
+									
+									<div class="user">
+										<span><div><a class="name" >Adam</a></div></span>
+										<div class="divider">
+										</div>
+										<a href="#" class="view">View Profile</a>
+									</div>
+						</div>
+
+	</div>
+	<div class="container2">
+    <form>
+        <h1>Product Information</h1>        
+		<p>Product Images &lpar;max width: 375px max height: 211px&rpar;</p>            
+            <input type="file" id="image_input" name="image_input" accept="image/png, image/jpg, image/jpeg">
+            <div id="display_img"></div>
+            <br>
+            <p>Product Name: <span id="name"></span></p>
+            <p>Category: <span id="type"></span></p>
+            <p>Product Description: <span id="description"></span></p>
+            
+    </form>    
+    <p><input type="submit" name="btnPublish" value="Publish" onclick="Publish();">  <input type="submit" name="btnCancel" value="Cancel" style="float: right;" onclick="Cancel();"> </form></p>
+</div>
+</body>
+<script>    
+    const image_input = document.querySelector("#image_input");
+    var uploaded_image = "";
+
+    image_input.addEventListener("change", addImage);
+
+    function addImage() {
+        const reader = new FileReader();
+        reader.addEventListener("load", () => {
+        uploaded_image = reader.result;
+        document.querySelector("#display_img").style.backgroundImage = `url(${uploaded_image})`;
+        });
+        reader.readAsDataURL(this.files[0]);
+    }
+
+    window.addEventListener("load", () => {
+        const name = localStorage.getItem("name");
+        const type = localStorage.getItem("type");
+        const description = localStorage.getItem("description");
+
+        document.getElementById("name").innerHTML = name;
+        document.getElementById("type").innerHTML = type;
+        document.getElementById("description").innerHTML = description;
+    })
+
+	function Publish() {
+		window.location.href="seller_manage_product_page.html";
+	}
+
+	function Cancel() {
+		localStorage.removeItem("name");
+		localStorage.removeItem("type");
+		localStorage.removeItem("description");
+
+		window.location.href="seller_add_product_page.html";
+	}
+</script>
+</html>

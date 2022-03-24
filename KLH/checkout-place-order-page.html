@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <title>Confirm Order</title>
+        <link rel="stylesheet" href="checkout-place-order-page.css">
+        <script defer>
+            window.addEventListener("load", () => { 
+                for (let i = 0; i !== localStorage.length; i++) {
+                    const text = document.querySelectorAll("p");
+                    
+                    if (i >= 15) { break; }
+                    if (i === 10) { 
+                        document.querySelector("img").src = localStorage.getItem(`form-${ text[i].id }`)
+                        i++; 
+                    }
+                    if (i === 11) {
+                        document.querySelector("li p").textContent = localStorage.getItem(`form-product-name`);
+                    }
+                    if (i === 12) {
+                        document.getElementById("order-total-price").textContent = 
+                            `RM ${ (parseFloat(
+                                localStorage.getItem("form-product-price").slice(3, 7)) + 1.5).toFixed(2) }`
+                        ;
+                    }
+
+                    document.getElementById(text[i].id).textContent = localStorage.getItem(`form-${ text[i].id }`);
+                    console.log(i, text[i].id);
+                }
+            });
+        </script>
+    </head>
+    <body class="place-order-page">
+        <div class="wrapper">
+            <div class="product-listing-section-leftlayer">
+                <div class="shipping-section-upperlayer">
+                    <div class="shipping-details-section">
+                        <h2>SHIPPING ADDRESS</h2>
+                        <div class="shipping-details-desc">
+                            <p id="username">KhooLayHan</p>
+                            <p id="street-address">No 12, Jalan SL 13/3</p>
+                            <p id="city">Kajang</p>
+                            <p id="zip-code">43000</p>
+                            <p id="state">Selangor</p>
+                            <p id="country-name">Malaysia</p>
+                        </div>
+                    </div>
+                    <div class="vertical-separator-line-1"></div>
+                    <div class="payment-details-section">
+                        <h2>PAYMENT METHOD</h2>
+                        <div class="payment-details-desc">
+                            <p id="card-name">Visa</p>
+                            <p id="card-number">5678 5678 1234 1234</p>
+                            <p id="card-expiry-date">2022-03-04</p>
+                            <p id="bank-name"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="horizontal-separator-line"></div>
+                <div class="shopping-cart-details-section">
+                    <h2>SHOPPING CART</h2>
+                    <div class="shopping-cart-details-desc">
+                        <p id="product-image"><img src="../Resource/Images/Placeholders/gallery-img1.jpg"></p>
+                        <div class="product-listing-section-rightlayer">
+                            <p id="product-name">Strike</p>
+                            <p id="product-price">RM 5.00</p>
+                            <p id="product-ratings">5 STARS</p>
+                            <p id="product-quantity">Quantity: 1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="vertical-separator-line-2"></div>
+            <div class="order-summary-details-section">
+                <div class="order-summary-section">
+                    <h2>Order Summary</h2>
+                    <ul>
+                        <li>
+                            Items:
+                            <p>Strike</p> 
+                        </li>
+                        <li>
+                            Tax: 
+                            <p>RM 1.50</p>
+                        </li>
+                        <li>
+                            Imported Fees: 
+                            <p>RM 0.00</p>   
+                        </li>
+                    </ul>
+                </div>
+                <div class="total-payment-section">
+                    <h2>Total Payment:</h2>
+                    <p id="order-total-price">RM 6.50</p>
+                </div>
+                <div class="confirm-order-button">
+                    <button type="button" name="confirm-order-button">
+                        <a href="../KLH/thank-you-page.html">Confirm Order</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

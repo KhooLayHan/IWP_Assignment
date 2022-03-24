@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>user dashboard</title>
+<style>
+
+body{
+    background-color: #353746;
+    background-image: url("../Resource/Images/Background/whole-deer.jpg");
+    background-position: center;
+}
+li a {
+  top:10%;
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+li a:hover {
+  background-color: #555;
+  color: white;
+}
+
+.navi img{
+height: 100px;width :250px;
+left: 40px;
+border-radius: 8px;
+position: relative;
+display: inline-block;
+}
+
+.container{
+	color: lightskyblue;
+    width: 20%;
+	padding:10px;
+	font-size: 15px;
+	margin: 10px 0;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	background-color: lightskyblue;
+    height:600px;
+    align-content: left;
+}
+.dropdown img{
+    position: absolute; top: 20px; left: 340px;
+    height: 50px;
+    width: 50px;
+}
+.user{
+position: absolute; left: 400px; top: 35px;
+
+}
+.name{
+position: absolute; top: -20px;
+color:white;
+}
+.add-project
+{
+top: 550px;
+left: 600px;
+background-color:blue;
+color: white;
+padding: 20px;
+text-decoration: none;
+border-radius: 50%;
+width:20%;
+border: none;
+display: inline-block;
+
+}
+
+.modal-body{
+position: absolute;
+left: 400px;
+top: 500px;
+
+}
+h4{
+position: absolute;
+left: 400px;
+top: 450px;
+display: block;
+}
+.cancel {
+background-color: #1338be;
+border: none;
+color: white;
+padding: 20px;
+text-decoration: none;
+display: inline-block;
+margin: 4px 2px;
+border-radius: 50%;
+width: 20%;
+}
+.upload{
+position: absolute;
+left: 350px;
+top: 20%;
+}
+.container2{
+    position: absolute;
+    background-color: whitesmoke;
+	padding:10px;
+	margin: 10px 0;
+	border: none;
+	outline: none;
+    height: 600px;
+    width:1170px;
+    top: 112px;
+    left: 329px;
+}
+.view{
+text-decoration: none;
+color:aqua;
+}
+</style>
+</head>
+<body>
+
+            <div class="navi" id="navigation">
+                <div class="logo">
+                        <img src="../Resource/Images/DeerLogos/deer-street.png" alt="" class="logo">
+                            
+            </div>
+            </div>
+            <div class="container">
+                <div class="navi">
+                        <li><a href="../YZY/home page.html"><i class=""></i><span class="txt1">Home</span></a></li>
+                        <li><a href="../YZY/ART_Gallery.html"><i class=""></i><span class="txt1">To Art Gallery</span></a></li>
+                        <li><a href="../KLH/shopping-cart-page.html"><i class=""></i><span class="txt1">My Cart</span></a></li>
+                        <li><a href="../KLH/checkout-place-order-page.html"><i class=""></i><span class="txt1">Payment</span></a></li>
+                        <li><a href="../TSY/contact.html"><i class=""></i><span class="txt1">Contact Us</span></a></li>
+                        <li><a href="../TSY/feedback.html"><i class=""></i><span class="txt1">Feedback</span></a></li>
+                </div>
+            </div>
+                        <div>
+                                <div class="dropdown"><img src="../Resource/Images/DeerLogos/default-placeholder.jpg" alt="user">
+                                            
+                                            <div class="user">
+                                                <span><div><a class="name" >Adam</a></div></span>
+                                                <div class="divider">
+                                                </div>
+                                                <a href="#" class="view">View Profile</a>
+                                            </div>
+                                </div>
+
+            </div>
+            
+            <!--This is for seller/admin not for users/buyer
+                <div class="container2"></div>
+                <div><h4>Add Project</h4></div>
+                <form action="/action_page.php">
+                    <label for="img">Select image:</label>
+                <div class="upload">Select a image: <input type="file" id="myfile" name="myfile"> </div>
+                <div class="modal-body">
+                            <input type="text" placeholder="Project Title" name="name">
+                            <input type="text" placeholder="Post of Post" name="mail">
+                            <input type="text" placeholder="Author" name="passsword">
+                            <div> <textarea placeholder="Desicrption" rows="4" cols="68"></textarea></div>
+                <div class="modal-footer">
+                   <button type="reset" href="#" class="cancel" data-dismiss="modal"> Close</button></a>
+                   <button type="submit" href="#" class="add-project" data-target="#add_project">save</button></a>
+                </form>
+            </div> -->
+        </div>
+</body>

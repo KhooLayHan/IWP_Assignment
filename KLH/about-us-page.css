@@ -1,0 +1,136 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+body {
+    background-image: url("../Resource/Images/Background/whole-deer.jpg");
+    background-size: contain;
+    position: relative;
+    text-align: center;
+    color: black;
+}
+
+main img {
+    margin-top: 30px;
+    max-width:100%;
+    max-height:100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+div.mission-vision-statement-section {
+    background-color: burlywood;
+    display: flex;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+
+.mission-vision-statement-article {
+    flex-direction: column;
+    width: 60%;
+    text-align: left;
+}
+
+.mission-vision-statement-article h1, .leadership-section h1, .core-values-section h1 {
+    font-size: 50px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.mission-vision-statement-article article {
+    margin-top: 10px;
+    font-size: 27px;
+    color: rgb(42, 42, 41);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.mission-vision-statement-section img {
+    width: 18%;
+    margin-bottom: 5px;
+}
+
+.leadership-section {
+    background-color: rgb(33, 202, 132);
+    text-align: center;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+
+.core-values-section {
+    background-color: aquamarine;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+
+.leaders-profile {
+    display: grid;
+    width: 50%;
+    height: 30%;
+    column-gap: 50px;
+}
+
+.flex-gap-first {
+    grid-column-start: 1;
+}
+
+.flex-gap-second {
+    grid-column-start: 2;
+}
+
+.flex-gap-third {
+    grid-column-start: 3;
+}
+
+.flex-gap-fourth {
+    grid-column-start: 4;
+}
+
+.flex-gap-fifth {
+    grid-column-start: 5;
+}
+
+div img:hover {   
+    opacity: .2;
+    transform: scale(1.1);
+}
+
+.flex-gap-first img {
+    height: 80%;
+    width: max-content;
+}
+
+.flex-gap-second img {
+    height: 80%;
+    width: max-content;
+}
+
+.flex-gap-third img {
+    width: max-content;
+    height: 80%;
+}
+
+.flex-gap-fourth img {
+    width: max-content;
+    height: 80%;
+}
+
+p {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.core-values-content {
+    display: grid;
+    margin: 10px;
+    font-size: 10px;
+}
+
+.core-values-content div {
+    border: blue 3px dashed;
+    padding: 10px;
+    column-gap: 5px;
+}
+
+.core-values-section p:last-child {
+    font-family: Helvetica, sans-serif;
+}

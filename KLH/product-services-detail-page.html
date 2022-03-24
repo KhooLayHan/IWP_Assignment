@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <title>Product/Services Details Page</title>
+        <link rel="stylesheet" href="product-services-detail-page.css">
+        <script defer>
+            function GenerateRandomProductDetails(id) {
+                const random = generateRandomInt()
+                
+                if (id === 0) {
+                    return 
+                }
+            } 
+
+            // function gen() { return "PNG" || "JPEG" || "TIFF" || "SVG"; }
+
+
+            const generateRandomInt = (min, max) => {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min + 1) + min);
+            }
+
+            function Redirect()
+            {
+                localStorage.removeItem("p");
+                localStorage.removeItem("img");
+                
+                const p = document.getElementById("product-ratings");
+                const img = document.getElementById("product-image");
+                const h1 = document.getElementById("product-name");
+                const li = document.querySelectorAll("li");
+                const span = document.getElementById("product-ratings");
+
+                if (!p || !img || !h1 || !li || !span) 
+                    console.log("Can't GET HTML p OR img values");
+
+                localStorage.setItem(`form-${ p.id }`, p.textContent);
+                localStorage.setItem(`form-${ h1.id }`, h1.textContent);
+                localStorage.setItem(`form-${ img.id }`, img.src);
+                localStorage.setItem(`form${ span.id }`, span.textContent);
+
+                for (let i = 0; i !== li.length; i++)
+                {
+                    localStorage.setItem(`form-${ li[i].id }`, li[i].textContent);
+                }
+                
+                window.location.href = "../KLH/shopping-cart-page.html";
+            }
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="main-deer-logo">
+                <a href="../YZY/home page.html"><img id="image-middle" src="../Resource/Images/DeerLogos/deer-street.png"></a>
+            </div>
+            <div class="content-page">
+                <section class="product-showcase-section">
+                    <div class="product-image-section">
+                        <img src="../Resource/Images/Placeholders/gallery-img1.jpg" id="product-image">
+                    </div>
+                    <div class="product-services">
+                        <button class="download-button">Download</button>
+                        <button class="save-button">Save</button>
+                        <button class="share-button">Share</button>
+                    </div>
+                    <h1>Published 1 day(s) ago</h1>
+                    <article class="reviews-section">
+                        <p>REVIEWS</p>
+                        <p>
+                            Ratings: <span id="product-ratings"><script>GenerateRandomProductDetails(1)</script></span> <br><br>
+                            "The product is made out of ... <br> Price-wise ..." <span>by [USER]</span>
+                        </p>
+                    </article>
+                </section>
+                <section class="product-details-section">
+                    <h1 id="product-name">Strike</h1>
+                    <ul class="products-details-list">
+                        <li id="product-price">RM 5.00</li>
+                        <li id="product-format">PNG</li>
+                        <li id="product-size">1920x1080 px</li>
+                        <li id="product-aspect-ratio">1:1</li>
+                        <li id="product-license">MIT</li>
+                    </ul>
+                </section>
+                <button type="button" class="cart-button" title="Add to cart">
+                    <a onclick="Redirect();">
+                        <img src="../Resource/Images/Placeholders/orange-shopping-cart.png">ADD TO CART
+                    </a>
+                </button>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,118 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+body {
+    background-size: cover;
+    background-image: url("../Resource/Images/Background/whole-deer.jpg");
+    background-repeat: no-repeat;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.wrapper {
+    background-color: rgb(218, 218, 218);
+	width: 40%;
+	height: 60%;
+	position: absolute;
+	border: 5px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 10px;
+}
+
+.main-deer-logo {
+    align-items: center;
+    text-align: center;
+}
+
+table, thead, td, section {
+    letter-spacing: 1px;
+    width: 100%;
+    border: 0;
+    padding: 10px;
+    
+}
+
+thead, tbody, section {
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
+}
+
+thead {
+    background-color: #16a085;
+    color: aliceblue;
+    text-align: center;
+}
+
+tbody {
+    background-color: whitesmoke;
+}
+
+.products-id {
+    width: 10%;
+}
+
+.products-id p {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: purple;
+}
+
+span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+button.delete-button img {
+    width: 60px;
+    border: none;
+    color: white;
+}
+
+.image-section {
+    width: 20%;
+}
+
+.image-section img {
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    position: relative;
+    transform: translate(-50%, 2%);
+}
+
+p {
+    text-transform: uppercase;
+    font-size: 17px;
+}
+
+tr:last-child {
+    font-style: italic;
+}
+
+section {
+    top: 50%;
+	left: 50%;
+	transform: translate(31vw, 5vh);
+    background-color: aqua;
+    letter-spacing: normal;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: right;
+    max-width: fit-content;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+section h2:first-child {
+    font-style: italic;
+}
+
+button.checkout-button {
+    position: absolute;
+    padding: 5px;
+    top: 49%;
+    left: 50%;
+    transform: translate(10vw, 15vh);
+}

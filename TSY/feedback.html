@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body{background-image:url("../Resource/Images/Background/whole-deer.jpg");}
+p{
+   font-size:17px;}
+h1, h3{
+   color:white;}
+h1{
+   margin-left:20px;}
+.fa{
+   padding:5px; margin-top:5px; font-size:25px;}
+.checked{
+   color: orange;}
+img{
+   padding:5px; margin-right:10px;}
+.comment{
+   padding:5px;}
+img{
+   border-radius:50%; width:100px;}
+h3{
+   text-align:center;}
+.select{
+   width:200px; height:50px;font-size:17px;border-radius:5px;border-width:3px;}
+#one,#two,#three,#four,#five,#six,#seven{
+   float:left;  border:3px solid #FFEBCD;margin-right:15px;padding:5px;width:20px;
+   text-align:center;border-radius:50%;text-decoration:none;}
+#one:hover,#two:hover,#three:hover,#four:hover,#five:hover,#six:hover,#seven:hover{
+   border-color:#FF7F50;}
+#one:target,#two:target,#three:target,#four:target,#five:target,#six:target,#seven:target{
+   border-color:#FF7F50; background-color:#FF7F50;}
+a{
+   text-decoration:none;color:black;font-weight:bold;}
+.paragraph{
+   text-align:center;margin-bottom:100px;color:white;}
+.content{
+   margin-left:200px;border:1px solid; width:900px;background-color:#b3b3ff;margin-left:250px;}
+.pic{
+   float:left;}
+.content{
+   display:grid; grid-template-columns:150px 1000px;border-radius:12px;padding:50px;}
+.text{ 
+   font-size:12px;word-spacing:245px;margin-bottom:100px;}
+button{
+   height:40px;width:100px;border-radius:12px;}
+button:hover{
+   font-weight:bold;background-color:#A0A0A0}
+</style>
+</head>
+<body>
+<h1>Feedback</h1><hr>
+<h3>We value your feedback</h3>
+<p class="paragraph">Please complete the following form and help us improve our cutomer experience.</p></div>
+
+<div class="content">
+<div class="pic">
+<img src="../Resource/Images/DeerLogos/sassy-user.jpg"/>
+</div>
+<div class="main">
+<p>How would you rate our website?</p>
+<div>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+</div>
+<p><br>What kind of feedback would you like to give?</p>
+<select class="select">
+    <option value="Website issues">Website issues</option>
+	<option value="Product support">Product support</option>
+	<option value="Prodouct feedback">Product feedback</option>
+</select>
+<div class="comment">
+<p><br>Please leave your feedback below.</p>
+<textarea cols="90" rows="15" placeholder="Comments here" style="background-color:#E8E8E8; border-color:#E8E8E8;" ></textarea>
+</div>
+
+<p><br>Would you recommend our website to your friends?</p>
+<div class="recommend">
+    <div id="one"><a href="#one">1</a></div>
+	<div id="two" ><a href="#two">2</a></div>
+	<div id="three" ><a href="#three">3</a></div>
+	<div id="four" ><a href="#four">4</a></div>
+	<div id="five" ><a href="#five">5</a></div>
+	<div id="six" ><a href="#six">6</a></div>
+	<div id="seven"><a href="#seven">7</a></div>
+</div>
+<p class="text" style="clear:both;">AbsolutelyNo Sure</p><br>
+<div class="submit" style="clear:both;">
+<button type="button" onclick="alert('Thanks for your feedback!')">Submit</button>
+</div>
+
+</div>
+</div>
+</body>
+</html>
+

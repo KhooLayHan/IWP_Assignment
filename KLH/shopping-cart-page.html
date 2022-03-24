@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <title>Shopping Cart</title>
+        <link rel="stylesheet" href="shopping-cart-page.css">
+        <script defer>
+            window.addEventListener("load", () => {
+                const text = document.querySelectorAll("p");
+                document.getElementById("product-image").src = localStorage.getItem(`form-product-image`);
+
+                for (let i = 0; i !== localStorage.length; i++) {    
+                    if (i === 0) { i++; }
+                    if (i >= 4) { break; } 
+                    console.log(i, text[i].id);
+                    document.getElementById(text[i].id).textContent = localStorage.getItem(`form-${ text[i].id }`);
+                } 
+            });
+
+            function Redirect()
+            {
+                const p = document.getElementById("product-quantity");
+                localStorage.getItem(`form-${ p.id }`, p.textContent);
+
+                window.location.href = "../KLH/checkout-shipping-form.html";
+            }
+            
+            function Remove(value)
+            {
+                const section = document.querySelector('section');
+                value.parentNode.parentNode.parentNode.remove(value);
+                section.remove();
+            }
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="products-section">
+                <div class="main-deer-logo">
+                    <a href="../YZY/home page.html"><img src="../Resource/Images/DeerLogos/deer-street.png"></a>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td colspan="6">
+                                <h1 class="shopping-cart-title">SHOPPING CART</h1>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="6" rowspan="5" class="products-id">
+                                <p>1</p>
+                            </td>
+                            <td colspan="3">
+                                <p id="product-name"><span>Strike</span></p>
+                            </td>
+                            <td rowspan="5" class="delete-button-section">
+                                <button class="delete-button" title="Delete" onclick="Remove(this);">
+                                    <img src="../Resource/Images/Placeholders/close.png">
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3" class="image-section">
+                                <img src="../Resource/Images/Placeholders/gallery-img2.jpg" id="product-image">
+                            </td>
+                            <td>
+                                <p id="product-price">RM 5.00</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p id="product-ratings">5 STARS</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p id="product-quantity">Quantity: 1</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <p class="product-details">"Definitely not a counterfeit and pure imitation"</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="checkout-button" title="Go to Shipping Page" onclick="Redirect()">
+                <h2>Go to Checkout</h2>     
+            </button>
+            <section>
+                <h2>SUBTOTAL</h2>
+                <h2>RM 5.00</h2>
+            </section>
+        </div>
+    </body>
+</html>

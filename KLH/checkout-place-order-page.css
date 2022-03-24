@@ -1,0 +1,211 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+body {
+    background-size: cover;
+    background-image: url("../Resource/Images/Background/whole-deer.jpg");
+    background-repeat: no-repeat;
+
+}
+
+.wrapper {
+    width: 90%;
+    height: 90%;
+    margin: 50px;
+    background-color: whitesmoke;
+    color: black;
+	left: 50px;
+	position: absolute;
+	border: 10px;
+
+	border-radius: 10px;
+    font-family: "Segoe UI";
+}
+
+.shipping-section-upperlayer {
+    display: inline;
+    padding: 10px;
+}
+
+.shipping-details-section {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+.payment-details-section {
+    position: absolute;
+    top: 50px;
+    left: 32vw;
+}
+
+.shipping-details-section h2, .payment-details-section h2 {
+    font-size: 40px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: black;
+    color: orange;
+    padding: 10px;
+}
+
+.shipping-details-desc, .payment-details-desc {
+    border: 6px black solid;
+}    
+
+.shopping-cart-details-section {
+    grid-row-start: 3;
+    position: relative;
+    top: 45vh;
+    width: 58%;
+    left: -16vw;
+    border: black 6px solid;
+}
+
+.shopping-cart-details-section h2 {
+    font-size: 40px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: black;
+    color: orange;
+    padding: 10px;
+    text-align: center;
+}
+
+.shopping-cart-details-desc {
+    position: relative;
+    display: inline;
+}
+
+img {
+    margin-top: 3px;
+    padding: 5px;
+}
+
+.product-listing-section-rightlayer {
+    position: absolute;
+    left: 26vw;
+    top: 100%;
+    max-height: max-content;
+    overflow: auto;
+    font-family: Tahoma;   
+}
+
+.product-listing-section-leftlayer p {
+    padding: 3px;
+    font-family: Tahoma;   
+    font-size: 25px;
+}
+
+.product-listing-section-rightlayer {
+    margin-top: 10px;
+}
+
+.product-listing-section-rightlayer p {
+    font-size: 30px;
+
+}
+
+.order-summary-details-section {
+    border: 8px black solid;
+    grid-column-start: 2;
+    position: absolute;
+    right: 5%;
+    top: 10%;
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.order-summary-section li {
+    list-style-type: none;
+    padding: 10px;
+    font-family: Tahoma;   ;
+}
+
+.order-summary-section h2 {
+    background-color: aquamarine;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.total-payment-section {
+    background-color: bisque;
+    position: absolute;
+    bottom: -50%;
+    margin-top: 30px;
+    left: 29px;
+}
+
+.total-payment-section h2 {  
+    background-color: greenyellow;
+    
+    padding: 10px;
+    font-style: italic;
+}
+
+.total-payment-section p {
+    margin-top: 10px;
+    padding-left: 10px;
+    font-size: 50px;
+}
+    
+.confirm-order-button {
+    position: absolute;
+    bottom: -100%;
+    left: 18%;
+}
+
+button {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 2rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+button:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+button:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+a, a:visited, a:hover, a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+.horizontal-separator-line {
+    border-top: 10px solid black;
+    width: 1150px;
+    position: absolute;
+    left: 0;
+    top: 41vh;
+}
+
+.vertical-separator-line-1 {
+    border-left: 10px solid black;
+    height: 400px;
+    position: absolute;
+    left: 28vw;
+    top: 0;
+}
+
+.vertical-separator-line-2 {
+    border-left: 50px solid black;
+    height: 1000px;
+    position: absolute;
+    left: 65%;
+    top: 0;
+}

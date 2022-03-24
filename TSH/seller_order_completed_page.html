@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Order List</title>
+<style>
+	body {
+		background-color: wheat;
+		background-image: url("../Resource/Images/Background/whole-deer.jpg");
+	}
+	li a {
+		top:10%;
+		display: block;
+		color: #000;
+		padding: 8px 16px;
+		text-decoration: none;
+	}
+	li a:hover {
+		background-color: #555;
+		color: white;
+	}	
+	.container{
+		color: lightskyblue;
+		width: 20%;
+		padding:10px;
+		font-size: 15px;
+		margin: 10px 0;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		background-color: lightskyblue;
+		height:600px;
+		align-content: left;
+	}
+	.dropdown img{
+		position: absolute; top: 20px; left: 340px;
+		height: 50px;
+		width: 50px;
+	}
+	.user{
+		position: absolute; left: 400px; top: 35px;
+
+	}
+	.name{
+		position: absolute; top: -20px;
+		color:white;
+	}
+	.container2{
+		position: absolute;
+		background-color: whitesmoke;
+		padding:10px;
+		margin: 10px 0;
+		border: none;
+		outline: none;
+		height: 600px;
+		width:1170px;
+		top: 112px;
+		left: 329px;
+	}
+	.view{
+		text-decoration: none;
+		color:aqua;
+	}
+	table{		
+		border-collapse: collapse;
+		width: 800px;
+		height: 200px;
+		border: 1px solid #bdc3c7;
+		box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
+	}
+	tr{
+		transition: all .2s ease-in;
+		cursor: pointer;
+	}
+	tr:hover{
+		background-color: lightgray;
+		transform: scale(1.02);
+		box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
+	}
+	th,td{
+		padding: 12px;
+		text-align: center;
+		border-bottom: 1px solid #ddd;
+	}
+	#header{
+		background-color: #16a085;
+		color: white;
+	}
+</style>
+</head>
+<body>
+	<div class="navi" id="navigation">
+		<div class="logo">
+				<img src="../Resource/Images/DeerLogos/deer-street.png" alt="" class="logo">
+					
+	</div>
+	</div>
+	<div class="container">
+		<div class="navi">
+			<li><a href="../YZY/home page.html"><span class="txt1">Home</span></a></li>
+			<li><a href="../YZY/ART_Gallery.html"><span class="txt1">To Art Gallery</span></a></li>
+			<li><a href="seller_manage_product_page.html"><span class="txt1">Manage Product</span></a></li>
+			<li><a href="seller_add_product_page.html"><span class="txt1">Add Product</span></a></li>
+			<li><a href="admin manage staff(2).html"><span class="txt1">Manage Staff</span></a></li>				
+			<li><a href="seller_member_page.html"><span class="txt1">Manage Member</span></a></li>
+			<li><a href="seller_order_unpaid_page.html"><span class="txt1">Manage Order</span></a></li>
+		</div>
+	</div>
+	<div>
+		<div class="dropdown"><img src="../Resource/Images/DeerLogos/default-placeholder.jpg" alt="user">
+					
+					<div class="user">
+						<span><div><a class="name" >Adam</a></div></span>
+						<div class="divider">
+						</div>
+						<a href="#" class="view">View Profile</a>
+					</div>
+		</div>
+
+	</div>
+	<div class="container2">
+	<h1>Order List</h1>
+	<p> 
+		<button onclick="location.href='seller_order_unpaid_page.html'">Unpaid Orders</button> 
+		<button onclick="location.href='seller_order_pending_page.html'">Pending Orders</button> 
+		<button>Completed Orders</button>
+	</p>
+	<table>
+		<thead>
+			<tr id="header">
+				<th>Product ID</th>
+				<th>Product Name</th>
+				<th>Payment</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody id="Orders">
+			<tr>
+				<th>A0000</th>
+				<th>2D artwork</th>
+				<th>Submitted</th>
+				<th>Completed</th>
+			</tr>
+			<tr>
+				<th>B0000</th>
+				<th>3D artwork</th>
+				<th>Submitted</th>
+				<th>Completed</th>
+			</tr>
+			<tr>
+				<th>C0000</th>
+				<th>Illustrations</th>
+				<th>Submitted</th>
+				<th>Completed</th>
+			</tr>
+			<tr>
+				<th>D0000</th>
+				<th>Stock photos</th>
+				<th>Submitted</th>
+				<th>Completed</th>
+			</tr>
+			<tr>
+				<th>E0000</th>
+				<th>Vector images</th>
+				<th>Submitted</th>
+				<th>Completed</th>
+			</tr>
+			<tr>
+				<th>F0000</th>
+				<th>2D static wallpaper</th>
+				<th>Submitted</th>
+				<th>Completed</th>
+			</tr>
+		</tbody>
+	</table>
+	<p>Page 1 of 5 <button>Next</button> </p>
+</div>
+</body>
+</html>

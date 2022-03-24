@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <title>Payment Page</title>
+        <link rel="stylesheet" href="checkout-payment-page.css">
+        <script defer>
+            function SetCardName(id) {
+                const cardName = document.getElementById("card-name");
+                const cardNumber = document.getElementById("card-number");
+                const cardExpiryDate = document.getElementById("card-expiry-date");
+                const bankName = document.getElementById("bank-name");
+
+                bankName.required = false;
+                if (id == 4 || id === 5 || id === 6) {
+                    cardName.required = false;
+                    cardNumber.required = false;
+                    cardExpiryDate.required = false;
+                }
+                
+                return id === 1 ? cardName.value = "Visa" 
+                     : id === 2 ? cardName.value = "MasterCard" 
+                     : id === 3 ? cardName.value = "Paypal" 
+                     : id === 4 ? bankName.value = "Maybank2U" 
+                     : id === 5 ? bankName.value = "CIMB Clicks" 
+                     : bankName.value = "HSBC Bank";
+            }
+            
+            function Redirect() {
+                localStorage.removeItem("input");
+                
+                const input = document.querySelectorAll("input");
+
+                if (!input) 
+                    console.log("Can't GET card or bank values for input HTML tag");
+
+                for (let i = 0; i !== input.length; i++) {
+                    let key = `form-${ input[i].name }`;
+                    let values = input[i].value;
+                    console.log(key, values);
+                    localStorage.setItem(key, values);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form action="checkout-place-order-page.html" method="get" class="checkout-payment-page" target="_blank">
+            <div class="wrapper">
+                <div class="form-legend">
+                    <a href="../YZY/home page.html"><img src="../Resource/Images/DeerLogos/deer-street.png"></a>
+                    <h1>PAYMENT METHOD</h1>
+                </div>
+                <div class="payment-list">
+                    <div class="credit-debit-card-payment">
+                        <div class="dropdown-cards">
+                            <div class="add-card-button">1. Add Credit/Debit Card</div>
+                            <ul>
+                                <li onclick="SetCardName(1);"><img src="../Resource/Images/CardLogos/visa-logo.png">Visa</li>
+                                <li onclick="SetCardName(2);"><img src="../Resource/Images/CardLogos/mastercard-logo.png">MasterCard</li>
+                                <li onclick="SetCardName(3);"><img src="../Resource/Images/CardLogos/paypal-logo.png">Paypal</li>
+                            </ul>
+                        </div>
+                        <div class="card-payment-details">
+                            <p>
+                                <label for="card-name">Card T.Name</label> 
+                                <input type="name" id="card-name" name="card-name" required placeholder="Hover the instructions">
+                            </p>
+                            <p>
+                                <label for="card-number">Card Number</label>
+                                <input type="text" name="card-number" id="card-number" required>        
+                            </p>
+                            <p>
+                                <label for="card-expiry-date">Card Expiry Date</label>
+                                <input type="date" name="card-expiry-date" id="card-expiry-date" required>        
+                            </p>
+                        </div>
+                    </div>  
+                    <div class="bank-transfer-payment">
+                        <div class="dropdown-bank">
+                            <div class="select-bank-button">2. Select Bank Transfer</div>
+                            <ul>
+                                <li onclick="SetCardName(4);"><img src="../Resource/Images/CardLogos/maybank-logo.png">Maybank2U</li>
+                                <li onclick="SetCardName(5);"><img src="../Resource/Images/CardLogos/cimb-bank-logo.png">CIMB Bank</li>
+                                <li onclick="SetCardName(6);"><img src="../Resource/Images/CardLogos/hsbc-bank-logo.png">HSBC Bank</li>
+                            </ul>
+                        </div>
+                        <div class="bank-transfer-details">
+                            <p>
+                                <label for="bank-name">Bank T.Name</label> 
+                                <input type="name" id="bank-name" name="bank-name" required placeholder="Hover the instructions at 2">
+                            </p>
+                        </div>  
+                    </div>  
+                </div>
+                <div class="form-submit-button">
+                    <button type="submit" name="form-submit-button" onclick="Redirect();">SUBMIT
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://kit.fontawesome.com/a06b3b19b1.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+*{
+    margin:0;}
+.background{
+    background-image:url("../Resource/Images/Background/whole-deer.jpg");height:130px;margin:0;}
+.dropdown img{
+    float:left;}
+.logo img{
+    margin-right:100px;}
+.user{
+    padding:5px;}
+.user img{
+    margin-right:7px;}
+.view{
+    text-decoration:none;color:aqua;}
+.name{
+    color:white;}
+.dropdown{
+    margin-top:-120px;margin-bottom:72.5px;}
+.grid{
+    display:grid;grid-template-columns:1.8fr 7fr;}
+.container .navi li a{
+    text-decoration:none;display:block;color:#000;padding:10px;margin:15px;}
+.container .navi{
+	padding:10px;
+	font-size:15px;
+	border: none;
+	outline: none;
+	background-color: lightskyblue;
+	height:600px;
+	list-style-type:none;}
+.edit{
+    margin-left:20px;margin-top:30px;margin-bottom:10px;} 
+hr{
+    margin-bottom:30px;}
+table{
+    border:none; width:1000px; height:300px;margin-left:20px;
+	border-collapse: collapse;box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2),
+	-1px -1px 8px rgba(0, 0, 0, 0.2);text-align:center;font-weight:bold;}
+table tr:nth-child(even){
+    background-color: #f2f2f2;}
+td{
+    padding:5px;}
+th{
+    background:#80ffaa;height:40px;color:#004d1a;}
+tr:hover{
+	background-color: lightgray;
+	transform: scale(1.02);
+	box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), 
+	-1px -1px 8px rgba(0, 0, 0, 0.2);}
+.navi li a:hover {
+	background-color: #555;
+	color: white;
+	}
+.edit li{
+    float:left; padding:5px;}
+.edit ul{
+    list-style-type:none; overflow:hidden;}
+.icon{
+    text-align:center; color:green;}
+.fa-circle-check{
+    font-weight:bold;}
+.fa-plus, .fa-eye, .fa-marker, .fa-trash-can{
+    color:#00b386;}
+ .edit li:hover{
+	transform: scale(1.25);}
+</style>
+</head>
+<body>
+<div class="background"></div>
+<div class="dropdown">
+    <div class="logo">
+    <img src="../Resource/Images/DeerLogos/deer-street.png"></div>
+									
+									<div class="user">
+									    <img src="../Resource/Images/DeerLogos/default-placeholder.jpg" width="50px" height="50px">
+										<span><div><a class="name" >Adam</a></div></span>
+										<a href="#" class="view" >View Profile</a>
+									</div>
+</div>
+
+<div class="grid" style="clear:both;">
+<div class="container">
+		<div class="navi">
+			<li><a href="../YZY/home page.html"><span class="txt1">Home</span></a></li>
+			<li><a href="../YZY/ART_Gallery.html"><span class="txt1">To Art Gallery</span></a></li>
+			<li><a href="seller_manage_product_page.html"><span class="txt1">Manage Product</span></a></li>
+			<li><a href="seller_add_product_page.html"><span class="txt1">Add Product</span></a></li>
+			<li><a href="admin manage staff(2).html"><span class="txt1">Manage Staff</span></a></li>				
+			<li><a href="seller_member_page.html"><span class="txt1">Manage Member</span></a></li>
+			<li><a href="seller_order_pending_page.html"><span class="txt1">Manage Order</span></a></li>
+		</div>
+	</div>
+<div class="container2">
+<div class="edit">
+<h1>Staff members</h1><br>
+<ul>
+    <li><i class="fa-solid fa-plus"></i></i>NewStaff</li>
+	<li><i class="fa-solid fa-marker"></i></i> Edit</li>
+	<li><i class="fa-solid fa-trash-can"></i></i> Delete</li>
+	<li><i class="fa-solid fa-eye"></i> View</li>
+</ul>
+</div>
+<table align="center">
+<hr>
+<tr>
+    <th colspan="1">Name</th>
+	<th colspan="1">Email</th>
+	<th colspan="1">Verified</th>
+	<th colspan="1">Role</th>
+	<th colspan="1">Last updated</th>
+</tr>
+<tr>
+    <td colspan="1" class="stfName">Virat Kohli</td>
+	<td colspan="1">Kohli23390@gamil.com</td>
+	<td colspan="1" class="icon"><i class="fa-regular fa-circle-check"></i></td>
+	<td colspan="1">Super Admin</td>
+	<td colspan="1">5/12/2020 9.16am</td>
+</tr>
+<tr>
+    <td colspan="1" class="stfName">David Arumugam</td>
+	<td colspan="1">DArumugam@gamil.com</td>
+	<td colspan="1" class="icon"><i class="fa-regular fa-circle-check"></td>
+	<td colspan="1">Super Admin</td>
+	<td colspan="1">11/5/2022 10.00am</td>
+</tr>
+<tr>
+    <td colspan="1" class="stfName">Sanjna Suri</td>
+	<td colspan="1">SanjnaSuri@yahoo.com</td>
+	<td colspan="1">.</td>
+	<td colspan="1">Admin</td>
+	<td colspan="1">3/8/2021 9.35am</td>
+</tr>
+<tr>
+    <td colspan="1" class="stfName">AC Mizal</td>
+	<td colspan="1">acMizal@yahoo.com</td>
+	<td colspan="1">.</td>
+	<td colspan="1">Admin</td>
+	<td colspan="1">10/8/2021 8.47am</td>
+</tr>
+<tr>
+    <td colspan="1" class="stfName">Kevin Pietersen</td>
+	<td colspan="1">Kevin003@gmail.com</td>
+	<td colspan="1" class="icon"><i class="fa-regular fa-circle-check"></td>
+	<td colspan="1">Admin</td>
+	<td colspan="1">7/6/2021 12.28pm</td>
+</tr>
+<tr>
+    <td colspan="1"class="stfName">Delimawati</td>
+	<td colspan="1">Delimawati@gmail.com</td>
+	<td colspan="1">.</td>
+	<td colspan="1">Admin</td>
+	<td colspan="1">8/3/2020 2.39pm</td>
+</tr>
+</table>
+</div>
+</div>
+</body>
+
+</html>

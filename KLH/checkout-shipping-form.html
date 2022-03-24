@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <title>Shipping Form</title>
+        <link rel="stylesheet" href="checkout-shipping-form.css">
+        <script defer>
+            function Redirect() {
+                localStorage.removeItem("input");
+                
+                const input = document.querySelectorAll("input");
+
+                if (!input) 
+                    console.log("Can't GET input values");
+
+                for (let i = 0; i !== input.length; i++) {
+                    let key = `${ input[i].name }`;
+                    let values = input[i].value;
+                    console.log(key, values);
+                    localStorage.setItem(key, values)
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form action="checkout-payment-page.html" method="get" class="checkout-form" target="_blank">
+            <div class="wrapper">
+                <div class="form-legend">
+                    <a href="../YZY/home page.html"><img src="../Resource/Images/DeerLogos/deer-street.png"></a>
+                    <h1>SHIPPING DETAILS</h1>
+                </div>
+                <div class="form-username">
+                    <label for="form-username">Username: </label>
+                    <input type="name" name="form-username" id="form-username" required>
+                </div>
+                <div class="form-phone-number">
+                    <label for="form-phone-number">Phone Number: </label>
+                    <input type="name" name="form-phone-number" id="form-phone-number">
+                </div>
+                <div class="form-country-name">
+                    <label for="form-country-name">Country/Region: </label>
+                    <input type="name" name="form-country-name" id="form-country-name" required>
+                </div>
+                <div class="form-street-address">
+                    <label for="form-street-address">Street Address: </label>
+                    <input type="name" name="form-street-address" id="form-street-address" required>
+                </div>
+                <div class="form-city">
+                    <label for="form-city">City: </label>
+                    <input type="name" name="form-city" id="form-city">
+                </div>
+                <div class="form-state">
+                    <label for="form-state">State/Province/Region: </label>
+                    <input type="name" name="form-state" id="form-state">
+                </div>
+                <div class="form-zip-code">
+                    <label for="form-zip-code">ZIP Code: </label>
+                    <input type="name" name="form-zip-code" id="form-zip-code">
+                </div>
+                <div class="form-submit-button">
+                    <button type="submit" name="form-submit-button" onclick="Redirect();">SUBMIT
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

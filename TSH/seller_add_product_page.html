@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add New Product</title>
+<style>	
+	body{
+		background-color: wheat;
+		background-image: url("../Resource/Images/Background/whole-deer.jpg");	
+		background-position: center;
+	}
+	li a {
+		top:10%;
+		display: block;
+		color: #000;
+		padding: 8px 16px;
+		text-decoration: none;
+	}
+	li a:hover {
+		background-color: #555;
+		color: white;
+	}	
+	.container{
+		color: lightskyblue;
+		width: 20%;
+		padding:10px;
+		font-size: 15px;
+		margin: 10px 0;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		background-color: lightskyblue;
+		height:600px;
+		align-content: left;
+	}
+	.dropdown img{
+		position: absolute; top: 20px; left: 340px;
+		height: 50px;
+		width: 50px;
+	}
+	.user{
+	position: absolute; left: 400px; top: 35px;
+
+	}
+	.name{
+	position: absolute; top: -20px;
+	color:white;
+	}
+	.container2{
+    position: absolute;
+    background-color: whitesmoke;
+	padding:10px;
+	margin: 10px 0;
+	border: none;
+	outline: none;
+    height: 600px;
+    width:1170px;
+    top: 112px;
+    left: 329px;
+}
+.view{
+text-decoration: none;
+color:aqua;
+}
+</style>
+</head>
+<body>
+	<div class="navi" id="navigation">
+		<div class="logo">
+				<img src="../Resource/Images/DeerLogos/deer-street.png" alt="" class="logo">
+					
+	</div>
+	</div>
+	<div class="container">
+		<div class="navi">
+				<li><a href="../YZY/home page.html"><span class="txt1">Home</span></a></li>
+				<li><a href="../YZY/ART_Gallery.html"><span class="txt1">To Art Gallery</span></a></li>
+				<li><a href="seller_manage_product_page.html"><span class="txt1">Manage Product</span></a></li>
+				<li><a href="seller_add_product_page.html"><span class="txt1">Add Product</span></a></li>
+				<li><a href="admin manage staff(2).html"><span class="txt1">Manage Staff</span></a></li>				
+				<li><a href="seller_member_page.html"><span class="txt1">Manage Member</span></a></li>
+				<li><a href="seller_order_unpaid_page.html"><span class="txt1">Manage Order</span></a></li>
+		</div>
+	</div>
+				<div>
+						<div class="dropdown"><img src="../Resource/Images/DeerLogos/default-placeholder.jpg" alt="user">
+									
+									<div class="user">
+										<span><div><a class="name" >Adam</a></div></span>
+										<div class="divider">
+										</div>
+										<a href="#" class="view">View Profile</a>
+									</div>
+						</div>
+
+	</div>
+	<div class="container2">
+<h1>Add New Product</h1>
+<p>Please choose the right category for your product</p>
+<br>
+<p>Product Name: <input id="product_name" type=text size=50 placeholder="input product name" required /></p>
+
+<p>Product Category: </p>
+<form id="Product_Type">
+	<input type="radio" id="a" name="type" value="2D artwork">
+	<label for="a"> 2D artwork</label><br>
+	<input type="radio" id="b" name="type" value="3D artwork">
+	<label for="b"> 3D artwork</label><br>
+	<input type="radio" id="c" name="type" value="Illustrations">
+	<label for="c"> Illustrations</label><br>
+	<input type="radio" id="d" name="type" value="Stock photos">
+	<label for="d"> Stock photos</label><br>
+	<input type="radio" id="e" name="type" value="Vector images">
+	<label for="e"> Vector images</label><br>
+	<input type="radio" id="f" name="type" value="2D static wallpaper">
+	<label for="f"> 2D static wallpaper</label><br>
+</form>
+<br>
+<p>Product Description: </p>
+<form>
+	<div>
+		<div> <textarea id="product_description" placeholder="Describe your product &lpar;max 500 words&rpar;" rows="10" cols="68" maxlength="500"></textarea></div>
+	</div>
+</form>
+<p><input type="submit" name="btnNext" value="Next" onclick="product_details();"></p>
+</div>
+</body>
+<script>
+	function product_details() {
+		localStorage.removeItem("name");
+		localStorage.removeItem("type");
+		localStorage.removeItem("description");
+		
+		let name = document.getElementById("product_name").value;
+		let radios = document.getElementsByName("type");		
+		let description = document.getElementById("product_description").value;
+		let type = "";
+
+		if(name!="") {
+			localStorage.setItem("name", name);
+		}
+		else if(name=="") {
+			alert("Product name must be filled out");
+		}
+		for (var i = 0, length = radios.length; i < length; i++) {
+			if (radios[i].checked) {
+				// Store the value for the selected radio
+				// You can maybe redirected on another page and pass this variable
+				type = radios[i].value;
+				localStorage.setItem("type", type);
+			}
+		}
+		localStorage.setItem("description", description);
+		if(type=="") {
+			alert("Please select product category");
+		}
+		if(name!="" && type!="") {
+			window.location.href="seller_add_product_page2.html";
+		}
+	}
+</script>
+</html>
