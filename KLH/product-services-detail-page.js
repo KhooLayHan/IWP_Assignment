@@ -104,7 +104,7 @@ window.addEventListener("load", () => {
     
     img.src = getRandomURL(); 
     h1.textContent = getRandomName(); 
-    span.textContent = getRandomRatings() + " STARS";
+    span.textContent = getRandomRatings() + " STAR(S)";
 
     li[0].textContent = "RM " + getRandomPrice();
     li[1].textContent = getRandomFormat();
