@@ -127,5 +127,3 @@ window.addEventListener("load", () => {
         window.location.href = "../KLH/shopping-cart-page.html";
     });
 });
-
-
