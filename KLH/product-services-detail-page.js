@@ -24,58 +24,108 @@ const productImageDetails = {
         "PNG", "JPEG", "TIFF", "SVG"
     ],
     size: [
-        "1920x1080 px", "1280x720 px", "1080x1080 px"
+        "1920x1080", "1280x720", "1080x1080"
     ],
     aspectRatio: [
         "1:1", "3:2", "5:4"
     ],
     license: [ 
         "MIT", "GPLv2", "Other", "Apache" // Licenses based on Github
+    ],
+    ratings: [
+        "1", "2", "3", "4", "5"
+    ],
+    price: [
+        "1.50", "5.00", "3.00", "10.00", "0.50"
     ]
 };
 
 function getImageValueAtIndex(values) { return values[generateRandomInt(0, values.length)]; }
 
-function generateRandomImageDetails() {
-    const url = Object.entries(productImageDetails)[0][1].find(getImageValueAtIndex)
-    const name = Object.entries(productImageDetails)[1][1].find(getImageValueAtIndex)
-    const format = Object.entries(productImageDetails)[2][1].find(getImageValueAtIndex)
-    const size = Object.entries(productImageDetails)[3][1].find(getImageValueAtIndex)
-    const license = Object.entries(productImageDetails)[4][1].find(getImageValueAtIndex)
-
-    console.log(url, name, format, size, license)
-
-    return { url, name, format, size, license };
+function getRandomURL() {
+    const url = Object.entries(productImageDetails)[0][1].find(getImageValueAtIndex) 
+        ?? "../Resource/Images/Placeholders/gallery-img9.jpg";
+    return url;
 }
 
+function getRandomName() {
+    const name = Object.entries(productImageDetails)[1][1].find(getImageValueAtIndex)
+        ?? "Students 2";
+    return name;
+}
 
+function getRandomFormat() {
+    const format = Object.entries(productImageDetails)[2][1].find(getImageValueAtIndex)
+        ?? "SVG";
+    return format;
+}
 
-const url = Object.entries(productImageDetails)[0][1].find(getImageValueAtIndex);
-    const name = Object.entries(productImageDetails)[1][1].find(getImageValueAtIndex);
-    const format = Object.entries(productImageDetails)[2][1].find(getImageValueAtIndex);
-    const size = Object.entries(productImageDetails)[3][1].find(getImageValueAtIndex);
-    const license = Object.entries(productImageDetails)[4][1].find(getImageValueAtIndex);
+function getRandomSize() {
+    const size = Object.entries(productImageDetails)[3][1].find(getImageValueAtIndex)
+        ?? "1080x1080";
+    return size;
+}
 
-    //if ((url || name || format || size || license) === undefined)
+function getRandomAspectRatio() {
+    const aspectRatio = Object.entries(productImageDetails)[4][1].find(getImageValueAtIndex) 
+        ?? "5:4";
+    return aspectRatio;
+}
 
+function getRandomLicense() {
+    const license = Object.entries(productImageDetails)[5][1].find(getImageValueAtIndex) 
+        ?? "Other";
+    return license;
+}
 
-    console.log(url, name, format, size, license)
+function getRandomRatings() {
+    const ratings = Object.entries(productImageDetails)[6][1].find(getImageValueAtIndex) 
+        ?? "1";
+    return ratings;
+}
 
-//console.log(Object.entries(result)[0][1]);
-
-
-//console.log(Object.entries(result)[4][1].find(getImageValueAtIndex));
-
-//console.log(Object.entries(result));
-
-document.getElementById("product-image-name");
-document.getElementById("product-image-format");
+function getRandomPrice() {
+    const price = Object.entries(productImageDetails)[7][1].find(getImageValueAtIndex) 
+        ?? "10.00";
+    return price;
+}
 
 window.addEventListener("load", () => {
-    document.getElementById("product-image-name").textContent = "Visa";
+    localStorage.removeItem("p");
+    localStorage.removeItem("img");
+    
+    const img = document.getElementById("product-image");
+    const h1 = document.getElementById("product-name");
+    const li = document.querySelectorAll("li");
+    const span = document.getElementById("product-ratings");
+    
+    if (!img || !h1 || !li || !span) 
+        console.log("Can't GET HTML p OR img values");
+    
+    img.src = getRandomURL(); 
+    h1.textContent = getRandomName(); 
+    span.textContent = getRandomRatings() + " STARS";
+
+    li[0].textContent = "RM " + getRandomPrice();
+    li[1].textContent = getRandomFormat();
+    li[2].textContent = getRandomSize() + " px";
+    li[3].textContent = getRandomAspectRatio();
+    li[4].textContent = getRandomLicense();
+    
+    const button = document.querySelector("button[class='cart-button']");
+
+    button.addEventListener("click", function Redirect() {
+        localStorage.setItem(`form-${ h1.id }`, h1.textContent);
+        localStorage.setItem(`form-${ img.id }`, img.src);
+        localStorage.setItem(`form-${ span.id }`, span.textContent);
+        
+        for (let i = 0; i !== li.length; i++)
+        {
+            localStorage.setItem(`form-${ li[i].id }`, li[i].textContent);
+        }
+        
+        window.location.href = "../KLH/shopping-cart-page.html";
+    });
 });
 
-//if (window.location.reload())
-// {
-//    for (int i = 0; i != )
-// }
+
